@@ -18,8 +18,8 @@
                     and MailGuy will generate a polished email for you in seconds.
                 </p>
             </div>
-            <form class="flex flex-col items-center gap-2">
-                <div class="grid grid-cols-2 gap-6 mb-10">
+            <form class="w-[50rem] flex flex-col items-center gap-2">
+                <div class="grid grid-cols-[150px_400px] gap-6 mb-10 text-left">
                     <label for="student-name">Student Name:</label>
                     <input class="border border-black" type="text" id="sname" name="student-name">
                     <label for="parent-name">Parent Name:</label>
@@ -27,7 +27,25 @@
                     <label for="reason">Reason:</label>
                     <input class="border border-black" type="text" id="reason" name="reason">
                     <label for="date">Date:</label>
-                    <input class="border border-black text-center" type="date" id="date" name="date">
+                    <div id="date-range-picker" date-rangepicker class="flex items-center">
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                               </svg>
+                           </div>
+                           <input id="datepicker-range-start" name="start" type="text" class="border border-black block w-full ps-10" placeholder="Select date start">
+                        </div>
+                        <span class="mx-4">to</span>
+                        <div class="relative">
+                            <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                 <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
+                               </svg>
+                           </div>
+                           <input id="datepicker-range-end" name="end" type="text" class="border border-black block w-full ps-10" placeholder="Select date end">
+                        </div>
+                    </div>
                 </div>
                 <input class="border border-black w-36" type="submit" value="Submit">
                 <input class="border border-black w-36" type="reset" value="Reset">
@@ -35,5 +53,6 @@
             <h1>Generated Response:</h1>
         </div>
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
     </body>
 </html>
