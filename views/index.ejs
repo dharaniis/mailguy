@@ -9,8 +9,8 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <div class="h-screen flex flex-col gap-10 items-center justify-center text-center">
-            <div class="w-[50rem]" >
+        <div class="h-fit flex flex-col gap-10 items-center justify-center text-center">
+            <div class="md:w-[50rem]" >
                 <h1 class="text-6xl font-bold">MailGuy</h1>
                 <p>
                     MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
@@ -18,14 +18,22 @@
                     and MailGuy will generate a polished email for you in seconds.
                 </p>
             </div>
-            <form class="w-[50rem] flex flex-col items-center gap-2">
-                <div class="grid grid-cols-[150px_400px] gap-6 mb-10 text-left">
+            <form class="md:w-[50rem] flex flex-col items-center gap-2">
+                <div class="grid md:grid-cols-[150px_400px] gap-6 mb-10 text-left items-center">
                     <label for="student-name">Student Name:</label>
                     <input class="border border-black" type="text" id="sname" name="student-name">
-                    <label for="parent-name">Parent Name:</label>
-                    <input class="border border-black" type="text" id="pname" name="parent-name">
+                    <label for="student-details">Student Details:<br>(Optional)</label>
+                    <input class="border border-black h-min placeholder:text-sm" type="text" id="sdetails" name="student-details" placeholder="[RollNo/Grade/Class/Department]">
+                    <label for="parent-name">Parent Name:<br>(Optional)</label>
+                    <input class="border border-black h-min" type="text" id="pname" name="parent-name">
                     <label for="reason">Reason:</label>
-                    <input class="border border-black" type="text" id="reason" name="reason">
+                    <select id="reason" class="bg-white border border-black" placeholder="Select a Reason">
+                        <option>Select a Reason</option>
+                        <option>Medical Leave</option>
+                        <option>Personal Reasons</option>
+                        <option>Event Participation</option>
+                        <option>Others</option>
+                    </select>
                     <label for="date">Date:</label>
                     <div id="date-range-picker" date-rangepicker class="flex items-center">
                         <div class="relative">
@@ -34,7 +42,7 @@
                                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                                </svg>
                            </div>
-                           <input id="datepicker-range-start" name="start" type="text" class="border border-black block w-full ps-10" placeholder="Select date start">
+                           <input id="datepicker-range-start" name="start" type="text" class="border border-black block w-full ps-10 placeholder:text-sm" placeholder="Select date start">
                         </div>
                         <span class="mx-4">to</span>
                         <div class="relative">
@@ -43,9 +51,11 @@
                                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z"/>
                                </svg>
                            </div>
-                           <input id="datepicker-range-end" name="end" type="text" class="border border-black block w-full ps-10" placeholder="Select date end">
+                           <input id="datepicker-range-end" name="end" type="text" class="border border-black block w-full ps-10 placeholder:text-sm" placeholder="Select date end">
                         </div>
                     </div>
+                    <label for="otherDetails">Other Details:</label>
+                    <textarea id="otherDetails" name="otherdetails" class="border border-black placeholder:text-sm text-gray" placeholder="Enter any additional specifics or comments for the prompt"></textarea>
                 </div>
                 <input class="border border-black w-36" type="submit" value="Submit">
                 <input class="border border-black w-36" type="reset" value="Reset">
