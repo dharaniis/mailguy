@@ -9,25 +9,31 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <h1>MailGuy</h1>
-        <p>
-            MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
-            Just fill out the simple form, provide the necessary details 
-            and MailGuy will generate a polished email for you in seconds.
-        </p>
-        <form>
-            <label for="student-name">Student Name:</label><br>
-            <input type="text" id="sname" name="student-name"><br>
-            <label for="parent-name">Parent Name:</label><br>
-            <input type="text" id="pname" name="parent-name"><br>
-            <label for="reason">Reason:</label><br>
-            <input type="text" id="reason" name="reason"><br>
-            <label for="date">Date:</label>
-            <input type="date" id="date" name="date"><br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
-        </form>
-        <h1>Generated Response:</h1>
+        <div class="h-screen flex flex-col gap-10 items-center justify-center text-center">
+            <div class="w-[50rem]" >
+                <h1 class="text-6xl font-bold">MailGuy</h1>
+                <p>
+                    MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
+                    Just fill out the simple form, provide the necessary details 
+                    and MailGuy will generate a polished email for you in seconds.
+                </p>
+            </div>
+            <form class="flex flex-col items-center gap-2">
+                <div class="grid grid-cols-2 gap-6 mb-10">
+                    <label for="student-name">Student Name:</label>
+                    <input class="border border-black" type="text" id="sname" name="student-name">
+                    <label for="parent-name">Parent Name:</label>
+                    <input class="border border-black" type="text" id="pname" name="parent-name">
+                    <label for="reason">Reason:</label>
+                    <input class="border border-black" type="text" id="reason" name="reason">
+                    <label for="date">Date:</label>
+                    <input class="border border-black text-center" type="date" id="date" name="date">
+                </div>
+                <input class="border border-black w-36" type="submit" value="Submit">
+                <input class="border border-black w-36" type="reset" value="Reset">
+            </form>
+            <h1>Generated Response:</h1>
+        </div>
         <script src="https://cdn.tailwindcss.com"></script>
     </body>
 </html>
