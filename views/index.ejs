@@ -28,13 +28,16 @@
                     <label for="parent-name">Parent Name:<br>(Optional)</label>
                     <input class="border border-black h-min" type="text" id="pname" name="parent-name">
                     <label for="reason">Reason:</label>
-                    <select id="reason" class="bg-white border border-black" placeholder="Select a Reason">
-                        <option>Select a Reason</option>
-                        <option>Medical Leave</option>
-                        <option>Personal Reasons</option>
-                        <option>Event Participation</option>
-                        <option>Others</option>
-                    </select>
+                    <div class="flex flex-col gap-2">
+                        <select id="reason" class="bg-white border border-black" placeholder="Select a Reason">
+                            <option>Select a Reason</option>
+                            <option>Medical Leave</option>
+                            <option>Personal Reasons</option>
+                            <option>Event Participation</option>
+                            <option>Others</option>
+                        </select>
+                        <input type="text" id="otherInput" class="hidden border border-black"> 
+                    </div>
                     <label for="date">Date & Time:</label>
                     <div class="flex flex-col gap-3">
                         <p class="block md:hidden">From:</p>
@@ -61,6 +64,16 @@
                 dateFormat: "d-m-Y h:i",
                 minDate: "today",
             });
+            const dropdown = document.getElementById("reason");
+            const otherInput = document.getElementById("otherInput");
+            dropdown.addEventListener("change", function() {
+            if (dropdown.value === "Others") {
+                otherInput.classList.remove("hidden");
+                otherInput.classList.add("block");
+            } else {
+                otherInput.classList.remove("block");
+                otherInput.classList.add("hidden");
+            }});
         </script>
     </body>
 </html>
