@@ -19,24 +19,24 @@
                     and MailGuy will generate a polished email for you in seconds.
                 </p>
             </div>
-            <form class="md:w-[50rem] flex flex-col items-center gap-2">
+            <form id="queryForms" action="/submit" method="POST" class="md:w-[50rem] flex flex-col items-center gap-2">
                 <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
-                    <label for="student-name">Student Name:</label>
-                    <input class="border border-black" type="text" id="sname" name="student-name">
-                    <label for="student-details">Student Details:<br>(Optional)</label>
-                    <input class="border border-black h-min placeholder:text-sm" type="text" id="sdetails" name="student-details" placeholder="[RollNo/Grade/Class/Department]">
-                    <label for="parent-name">Parent Name:<br>(Optional)</label>
-                    <input class="border border-black h-min" type="text" id="pname" name="parent-name">
+                    <label for="studentname">Student Name:</label>
+                    <input class="border border-black" type="text" id="sname" name="studentname">
+                    <label for="studentdetails">Student Details:<br>(Optional)</label>
+                    <input class="border border-black h-min placeholder:text-sm" type="text" id="sdetails" name="studentdetails" placeholder="[RollNo/Grade/Class/Department]">
+                    <label for="parentname">Parent Name:<br>(Optional)</label>
+                    <input class="border border-black h-min" type="text" id="pname" name="parentname">
                     <label for="reason">Reason:</label>
                     <div class="flex flex-col gap-2">
-                        <select id="reason" class="bg-white border border-black" placeholder="Select a Reason">
-                            <option>Select a Reason</option>
-                            <option>Medical Leave</option>
-                            <option>Personal Reasons</option>
-                            <option>Event Participation</option>
-                            <option>Others</option>
+                        <select id="reason" class="bg-white border border-black" name="reason" form="queryForms">
+                            <option value="">Select a Reason</option>
+                            <option value="medicalleave">Medical Leave</option>
+                            <option value="personalreasons">Personal Reasons</option>
+                            <option value="eventparticipation">Event Participation</option>
+                            <option value="others">Others</option>
                         </select>
-                        <input type="text" id="otherInput" class="hidden border border-black"> 
+                        <input type="text" id="otherInput" name="otherinput" class="hidden border border-black"> 
                     </div>
                     <label for="date">Date & Time:</label>
                     <div class="flex flex-col gap-3">
@@ -67,7 +67,7 @@
             const dropdown = document.getElementById("reason");
             const otherInput = document.getElementById("otherInput");
             dropdown.addEventListener("change", function() {
-            if (dropdown.value === "Others") {
+            if (dropdown.value === "others") {
                 otherInput.classList.remove("hidden");
                 otherInput.classList.add("block");
             } else {
