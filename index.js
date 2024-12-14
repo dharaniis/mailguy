@@ -22,8 +22,12 @@ app.post("/submit", async (req, res) => {
   const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   const result = await model.generateContent(prompt);
-  console.log(result.response.text());
-  res.render("index.ejs", {response: result.response.text()});
+  const email = result.response.text();
+  res.render("index.ejs", {response: email});
+  const position = email.search("Dear");
+  const subjectRaw = email.slice(0,position);
+  const subject = subjectRaw.trim();
+  const body = email.slice(position,email.length);
 });
 
 app.listen(port, () => {
