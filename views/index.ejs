@@ -51,7 +51,12 @@
                 <input class="border border-black w-36" type="submit" value="Submit">
                 <input class="border border-black w-36" type="button" value="Reset" onclick="location.href='/';">
             </form>
-            <h1>Generated Response:</h1>
+<% if (locals.response){ %>
+            <div class="w-[50rem] text-left  ">
+                <h1 class="text-center">Generated Response:</h1>
+                <pre class="text-wrap font-sans mt-10"><%= response %></pre>
+            </div>
+<% } %>
         </div>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
