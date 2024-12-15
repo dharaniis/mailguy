@@ -36,7 +36,7 @@
                             <option value="eventparticipation">Event Participation</option>
                             <option value="others">Others</option>
                         </select>
-                        <input type="text" id="otherInput" name="otherinput" class="hidden border border-black"> 
+                        <input type="text" id="otherReason" name="otherReason" class="hidden border border-black"> 
                     </div>
                     <label for="date">Date & Time:</label>
                     <div class="flex flex-col gap-3">
@@ -47,6 +47,8 @@
                     </div>
                     <label for="otherDetails">Other Details:</label>
                     <textarea id="otherDetails" name="otherdetails" class="border border-black placeholder:text-sm text-gray" placeholder="Enter any additional specifics or comments for the prompt"></textarea>
+                    <label for="email">Receiver email:</label>
+                    <input class="border border-black" type="email" id="email" name="email"> 
                 </div>
                 <input class="border border-black w-36" type="submit" value="Submit">
                 <input class="border border-black w-36" type="button" value="Reset" onclick="location.href='/';">
