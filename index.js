@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import bodyParser from "body-parser";
+import mailtolink from "mailto-link";
 
 dotenv.config();
 
@@ -23,11 +24,16 @@ app.post("/submit", async (req, res) => {
   const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
   const result = await model.generateContent(prompt);
   const email = result.response.text();
-  res.render("index.ejs", {response: email});
   const position = email.search("Dear");
-  const subjectRaw = email.slice(0,position);
+  const subjectRaw = email.slice(9,position);
   const subject = subjectRaw.trim();
   const body = email.slice(position,email.length);
+  const mailto = mailtolink({
+    to: "ponnidharani@gmail.com",
+    subject: subject,
+    body: body
+  })
+  res.render("index.ejs", {response: email, mailto: mailto});
 });
 
 app.listen(port, () => {

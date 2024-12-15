@@ -52,9 +52,12 @@
                 <input class="border border-black w-36" type="button" value="Reset" onclick="location.href='/';">
             </form>
 <% if (locals.response){ %>
-            <div class="w-[50rem] text-left  ">
+            <div class="md:w-[50rem] h-fit flex flex-col justify-center items-center">
                 <h1 class="text-center">Generated Response:</h1>
-                <pre class="text-wrap font-sans mt-10"><%= response %></pre>
+                <div class="text-left">
+                    <pre class="text-wrap font-sans mt-10"><%= response %></pre>
+                </div>
+                <a href="<%= mailto %>" type="button" class="w-36 border border-black">Send Mail</a>
             </div>
 <% } %>
         </div>
