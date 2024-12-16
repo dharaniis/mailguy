@@ -8,12 +8,19 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="">
+        <style>
+            body{
+                background-color: #ffffff;
+background-image:  radial-gradient(#444cf7 1.1px, transparent 1.1px), radial-gradient(#444cf7 1.1px, #ffffff 1.1px);
+background-size: 44px 44px;
+background-position: 0 0,22px 22px;
+        }
+        </style>
     </head>
-    <body>
-        <div class="h-fit flex flex-col gap-10 items-center justify-center text-center">
-            <div class="md:w-[50rem]" >
-                <h1 class="text-6xl font-bold">MailGuy</h1>
-                <p>
+    <body class="flex flex-col items-center">
+            <div class="h-screen text-center flex flex-col gap-2 items-center justify-center md:w-[50rem]" >
+                <h1 class="bg-white text-6xl font-bold">MailGuy</h1>
+                <p class="bg-white">
                     MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
                     Just fill out the simple form, provide the necessary details 
                     and MailGuy will generate a polished email for you in seconds.
@@ -62,7 +69,6 @@
                 <a href="<%= mailto %>" type="button" class="w-36 border border-black">Send Mail</a>
             </div>
 <% } %>
-        </div>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
