@@ -8,29 +8,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <style>
-            body{
-                background-color: #ffffff;
-background-image:  radial-gradient(#444cf7 1.1px, transparent 1.1px), radial-gradient(#444cf7 1.1px, #ffffff 1.1px);
-background-size: 44px 44px;
-background-position: 0 0,22px 22px;
-        }
+                .kanit {
+                font-family: "Kanit", serif;
+}
         </style>
     </head>
-    <body onload="scrollSection()" class="">
+    <body onload="scrollSection()" class="kanit text-white bg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]">
             <div class="h-fit md:h-screen w-full text-center flex flex-col gap-2 items-center justify-center " >
                 <div class="md:w-[50rem]">
-                    <h1 class="bg-white text-7xl font-bold">MailGuy</h1>
-                    <p class="bg-white text-gray-500 text-lg">
+                    <h1 class="text-7xl italic font-bold ka">MailGuy</h1>
+                    <p class="text-gray-400 text-lg">
                         MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
                         Just fill out the simple form, provide the necessary details 
                         and MailGuy will generate a polished email for you in seconds with a single click.
                     </p>
                 </div>
-                <div class="grid md:grid-cols-3 grid-row-3 my-10 items-center justify-center font-bold justify-items-center">
-                    <p class="order-1 md:order-1 text-2xl bg-white">1. Fill the Form</p> 
-                    <p class="order-3 md:order-2 text-2xl bg-white">2. Generate the Email</p>
-                    <p class="order-5 md:order-3 text-2xl bg-white">3. Send the Email</p>
+                <div class="grid md:grid-cols-3 grid-row-3 my-10 items-center justify-center justify-items-center">
+                    <p class="order-1 md:order-1 text-2xl">1. Fill the Form</p> 
+                    <p class="order-3 md:order-2 text-2xl">2. Generate the Email</p>
+                    <p class="order-5 md:order-3 text-2xl">3. Send the Email</p>
                     <img src="form.png" class="order-2 md:order-4 h-[200px]">
                     <img src="generate.png" class="order-4 md:order-5 h-[100px]">
                     <img src="send.png" class="order-6 md:order-6 h-[200px]">    
@@ -38,7 +38,7 @@ background-position: 0 0,22px 22px;
                 <a href="#formsSection" type="button" class="mt-5 text-xl text-center w-48 border border-black">Start Writing</a>
             </div>
             <div id="formsSection" class="my-10 flex flex-col items-center justify-center gap-5">
-                <h1 class="bg-white text-7xl font-bold">Fill the Form:</h1>
+                <h1 class="text-7xl font-semibold">Fill the Form:</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 md:w-[50rem] flex flex-col items-center gap-2">
                     <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
                         <label for="studentname">Student Name:</label>
