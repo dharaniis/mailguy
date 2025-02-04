@@ -12,6 +12,16 @@
         </style>
     </head>
     <body onload="scrollSection()" class="">
+            <div class="h-fit flex bg-black text-white sticky top-0 align-items-center">
+                <div class="m-5 basis-1/2">
+                    <a class="text-4xl font-bold">MailGuy</a>
+                </div>
+                <div class="text-lg basis-1/2 justify-end flex place-items-center gap-5 mx-7">
+                    <a>Home</a>
+                    <a>Form</a>
+                    <a>Guide</a>
+                </div>
+            </div>
             <div class="h-screen w-full text-center flex flex-col gap-2 items-center justify-center " >
                 <div class="md:w-[50rem]">
                     <h1 class="bg-white text-7xl font-bold">MailGuy</h1>
@@ -28,7 +38,7 @@
                 </div>
                 <a href="#formsSection" type="button" class="mt-5 text-xl text-center w-48 border border-black">Start Writing</a>
             </div>
-            <div id="formsSection" class="my-10 flex flex-col items-center justify-center gap-5">
+            <div id="formsSection" class="h-screen my-10 flex flex-col items-center justify-center gap-5">
                 <h1 class="bg-white text-7xl font-bold">Fill the Form:</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 md:w-[50rem] flex flex-col items-center gap-2">
                     <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
@@ -77,7 +87,7 @@
                 </div>
             </div>
 <% } %>
-             <div id="instructionsSection" class="my-10 flex flex-col items-center">
+             <div id="instructionsSection" class="h-screen my-10 flex flex-col items-center justify-center">
                 <h1 class="text-2xl font-bold">
                     Step-by-Step Instructions to Use MailGuy
                 </h1>
