@@ -14,7 +14,7 @@
     <body onload="scrollSection()" class="">
             <div class="h-fit flex bg-black text-white sticky top-0 align-items-center">
                 <div class="m-5 basis-1/2">
-                    <a class="text-4xl font-bold">MailGuy</a>
+                    <a href="#Home" class="text-4xl font-bold">MailGuy</a>
                 </div>
                 <div class="text-lg basis-1/2 justify-end flex place-items-center gap-5 mx-7">
                     <a href="#Home">Home</a>
@@ -25,9 +25,9 @@
                     <a href="#instructionsSection">Guide</a>
                 </div>
             </div>
-            <div id="Home" class="h-screen w-full text-center flex flex-col gap-2 items-center justify-center " >
+            <div id="Home" class="h-screen w-full text-center flex flex-col gap-5 items-center justify-center " >
                 <div class="">
-                    <h1 class="bg-white text-[80px] font-bold">Online AI Email Writer</h1>
+                    <h1 class="bg-white mt-[80px] text-[80px] font-bold">Online AI Email Writer</h1>
                     <p class="bg-white text-gray-500 text-lg md:w-[50rem]">
                         MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
                         Just fill out the simple form, provide the necessary details 
@@ -42,7 +42,7 @@
                 <a href="#formsSection" type="button" class="mt-5 mb-[80px] text-xl text-center w-48 border border-black">Start Writing</a>
             </div>
             <div id="formsSection" class="h-screen my-10 flex flex-col items-center justify-center gap-5">
-                <h1 class="bg-white text-7xl font-bold">Fill the Form</h1>
+                <h1 class="bg-white mt-[80px] text-7xl font-bold">Fill the Form</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 md:w-[50rem] flex flex-col items-center gap-2">
                     <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
                         <label for="studentname">Student Name:</label>
@@ -80,9 +80,9 @@
             </div>
 <% if (locals.response){ %> 
             <div id="responseSection" class="my-10 h-screen flex flex-col items-center justify-center">
-                <div class="md:w-[50rem] flex flex-col justify-center items-center  gap-2">
-                    <h1 class="text-center bg-white text-7xl font-bold">Generated Response</h1>
-                    <div class="text-left">
+                <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2">
+                    <h1 class="text-center mt-[80px] bg-white text-7xl font-bold">Generated Response</h1>
+                    <div class="text-lg text-left">
                         <pre class="text-wrap font-sans mt-10"><%= response %></pre>
                     </div>
                     <a href="<%= mailto %>" type="button" class="text-center w-36 border border-black">Send Mail</a>
