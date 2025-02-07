@@ -9,10 +9,14 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="">
         <style>
+            #Home {
+                background: rgb(37,106,200);
+                background: radial-gradient(circle, rgba(37,106,200,1) 0%, rgba(22,27,49,1) 71%); 
+}
         </style>
     </head>
-    <body onload="scrollSection()" class="">
-            <div class="h-fit flex bg-black text-white sticky top-0 align-items-center">
+    <body onload="scrollSection()" class="bg-black text-white">
+            <div class="h-min w-full flex bg-transparent text-white fixed top-0 z-10 align-items-center">
                 <div class="m-5 basis-1/2">
                     <a href="#Home" class="text-4xl font-bold">MailGuy</a>
                 </div>
@@ -25,24 +29,51 @@
                     <a href="#instructionsSection">Guide</a>
                 </div>
             </div>
-            <div id="Home" class="h-screen w-full text-center flex flex-col gap-5 items-center justify-center " >
+            <div id="Home" class="text-white h-screen w-full text-center flex flex-col gap-[50px] items-center justify-center " >
                 <div class="">
-                    <h1 class="bg-white mt-[80px] text-[80px] font-bold">Online AI Email Writer</h1>
-                    <p class="bg-white text-gray-500 text-lg md:w-[50rem]">
+                    <h1 class="mt-[80px] text-[90px] font-bold">The AI Email Writer</h1>
+                    <p class="mt-2 text-lg md:w-[50rem]">
                         MailGuy is your go-to assistant for crafting perfect emails powered by the Google Gemini API.
                         Just fill out the simple form, provide the necessary details 
                         and MailGuy will generate a polished email for you in seconds with a single click.
                     </p>
                 </div>
-                <div class="mt-10 font-bold w-full flex flex-row justify-around">
-                    <p class="text-2xl bg-white">1. Fill the Form</p>
-                    <p class="text-2xl bg-white">2. Generate the Email</p>
-                    <p class="text-2xl bg-white">3. Send the Email</p>
+                <div class="mt-10 font-bold w-full flex flex-row justify-center gap-[200px]">
+                    <p class="text-2xl">1. Fill the Form</p>
+                    <p class="text-2xl">2. Generate the Email</p>
+                    <p class="text-2xl">3. Send the Email</p>
                 </div>
-                <a href="#formsSection" type="button" class="mt-5 mb-[80px] text-xl text-center w-48 border border-black">Start Writing</a>
+                <div class="relative inline-flex items-center justify-center gap-4 group">
+                <div
+                    class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                ></div>
+                <a
+                    role="button"
+                    class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                    title="payment"
+                    href="#formsSection"
+                    >Start Writing<svg
+                    aria-hidden="true"
+                    viewBox="0 0 10 10"
+                    height="10"
+                    width="10"
+                    fill="none"
+                    class="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+                    >
+                    <path
+                        d="M0 5h7"
+                        class="transition opacity-0 group-hover:opacity-100"
+                    ></path>
+                    <path
+                        d="M1 1l4 4-4 4"
+                        class="transition group-hover:translate-x-[3px]"
+                    ></path>
+                    </svg>
+                </a>
+                </div>
             </div>
-            <div id="formsSection" class="h-screen my-10 flex flex-col items-center justify-center gap-5">
-                <h1 class="bg-white mt-[80px] text-7xl font-bold">Fill the Form</h1>
+            <div id="formsSection" class="h-screen py-10 flex flex-col items-center justify-center gap-5">
+                <h1 class="  mt-[80px] text-7xl font-bold">Fill the Form</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 md:w-[50rem] flex flex-col items-center gap-2">
                     <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
                         <label for="studentname">Student Name:</label>
@@ -53,9 +84,9 @@
                         <input class="border border-black h-min" type="text" id="pname" name="parentname">
                         <label for="reason">Reason:</label>
                         <div class="flex flex-col gap-2">
-                            <select id="reason" class="bg-white border border-black" name="reason" form="queryForms">
+                            <select id="reason" class="  border border-black" name="reason" form="queryForms">
                                 <option value="">Select a Reason</option>
-                                <option value="medicalleave">Medical Leave</option>
+                                <option value="medicallbg-[conic-gradient(at_bottom_right,_var(--tw-gradient-stops))] from-[#1d4ed8] via-[#1e40af] to-[#111827]eave">Medical Leave</option>
                                 <option value="personalreasons">Personal Reasons</option>
                                 <option value="eventparticipation">Event Participation</option>
                                 <option value="others">Others</option>
@@ -81,7 +112,7 @@
 <% if (locals.response){ %> 
             <div id="responseSection" class="my-10 h-screen flex flex-col items-center justify-center">
                 <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2">
-                    <h1 class="text-center mt-[80px] bg-white text-7xl font-bold">Generated Response</h1>
+                    <h1 class="text-center mt-[80px]   text-7xl font-bold">Generated Response</h1>
                     <div class="text-lg text-left">
                         <pre class="text-wrap font-sans mt-10"><%= response %></pre>
                     </div>
@@ -90,8 +121,8 @@
                 </div>
             </div>
 <% } %>
-             <div id="instructionsSection" class="h-screen my-10 flex flex-col items-center justify-evenly">
-                <h1 class="text-6xl mt-[80px] text-center font-bold">
+             <div id="instructionsSection" class="h-screen flex flex-col items-center justify-evenly">
+                <h1 class="text-6xl  text-center font-bold">
                     Step-by-Step Instructions to Use MailGuy
                 </h1>
                 <ol class="w-[25rem] my-10 flex flex-col gap-5 justify-evenly list-decimal text-left">
