@@ -43,34 +43,34 @@
                     <p class="text-2xl">2. Generate the Email</p>
                     <p class="text-2xl">3. Send the Email</p>
                 </div>
-                <div class="relative inline-flex items-center justify-center gap-4 group">
-                <div
-                    class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
-                ></div>
-                <a
-                    role="button"
-                    class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
-                    title="payment"
-                    href="#formsSection"
-                    >Start Writing<svg
-                    aria-hidden="true"
-                    viewBox="0 0 10 10"
-                    height="10"
-                    width="10"
-                    fill="none"
-                    class="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
-                    >
-                    <path
-                        d="M0 5h7"
-                        class="transition opacity-0 group-hover:opacity-100"
-                    ></path>
-                    <path
-                        d="M1 1l4 4-4 4"
-                        class="transition group-hover:translate-x-[3px]"
-                    ></path>
-                    </svg>
-                </a>
-                </div>
+                <div id="buttonHome" class="relative inline-flex items-center justify-center gap-4 group">
+                    <div
+                        class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                    ></div>
+                    <a
+                        role="button"
+                        class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-8 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                        title="payment"
+                        href="#formsSection"
+                        >Start Writing<svg
+                        aria-hidden="true"
+                        viewBox="0 0 10 10"
+                        height="10"
+                        width="10"
+                        fill="none"
+                        class="mt-0.5 ml-2 -mr-1 stroke-white stroke-2"
+                        >
+                        <path
+                            d="M0 5h7"
+                            class="transition opacity-0 group-hover:opacity-100"
+                        ></path>
+                        <path
+                            d="M1 1l4 4-4 4"
+                            class="transition group-hover:translate-x-[3px]"
+                        ></path>
+                        </svg>
+                    </a>
+                    </div>
             </div>
             <div id="formsSection" class="h-screen py-10 flex flex-col items-center justify-center gap-5">
                 <h1 class="  mt-[80px] text-7xl font-bold">Fill the Form</h1>
@@ -105,10 +105,27 @@
                         <label for="email">Receiver email:</label>
                         <input class="border border-black" type="email" id="email" name="email"> 
                     </div>
-                    <input class="border border-black w-36" type="submit" value="Submit">
-                    <input class="border border-black w-36" type="button" value="Reset" onclick="location.href='/';">
+                    <div id="buttonGenerate" class="relative inline-flex items-center justify-center gap-4 group">
+                        <div
+                            class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                        ></div>
+                        <input
+                            type="submit"
+                            value="Generate"
+                            class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-12 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                            title="payment"
+                            href="#formsSection"
+                            >
+                        </input>
+                        </div>
+                    <button
+                        class="bg-gray-900 text-white text-center w-48 rounded-2xl h-12 mt-2 relative text-black text-xl font-semibold hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                        type="button"
+                        onclick="location.href='/';"
+                        >Reset</button>
                 </form>
             </div>
+        </div>
 <% if (locals.response){ %> 
             <div id="responseSection" class="my-10 h-screen flex flex-col items-center justify-center">
                 <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2">
