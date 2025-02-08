@@ -9,13 +9,12 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="">
         <style>
-            #Home {
-                background: rgb(37,106,200);
-                background: radial-gradient(circle, rgba(37,106,200,1) 0%, rgba(22,27,49,1) 71%); 
-}
         </style>
     </head>
-    <body onload="scrollSection()" class="bg-black text-white">
+    <body onload="scrollSection()" class="text-white ">
+            <div 
+                class="relative top-0 left-0 w-screen h-screen overflow-y-scroll [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]">
+            
             <div class="h-min w-full flex bg-transparent text-white fixed top-0 z-10 align-items-center">
                 <div class="m-5 basis-1/2">
                     <a href="#Home" class="text-4xl font-bold">MailGuy</a>
@@ -29,7 +28,7 @@
                     <a href="#instructionsSection">Guide</a>
                 </div>
             </div>
-            <div id="Home" class="text-white h-screen w-full text-center flex flex-col gap-[50px] items-center justify-center " >
+            <div id="Home" class="text-white h-screen w-full text-center flex flex-col gap-[50px] items-center justify-center  " >
                 <div class="">
                     <h1 class="mt-[80px] text-[90px] font-bold">The AI Email Writer</h1>
                     <p class="mt-2 text-lg md:w-[50rem]">
@@ -72,8 +71,9 @@
                     </a>
                     </div>
             </div>
-            <div id="formsSection" class="h-screen py-10 flex flex-col items-center justify-center gap-5">
-                <h1 class="  mt-[80px] text-7xl font-bold">Fill the Form</h1>
+            <div id="formsSection" class="h-screen py-10 flex justify-center ">
+                <div class=" py-5 w-fit flex flex-col items-center justify-center gap-5 ">
+                <h1 class="text-7xl font-bold">Fill the Form</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 md:w-[50rem] flex flex-col items-center gap-2">
                     <div class="grid md:grid-cols-[150px_250px] gap-6 mb-10 text-left items-center">
                         <label for="studentname">Student Name:</label>
@@ -168,6 +168,8 @@
                 </ol>
                 <p class="text-3xl text-center font-bold">That’s it—super easy!</p>
             </div>
+        </div>
+    </div>
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
