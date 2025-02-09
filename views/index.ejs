@@ -9,7 +9,13 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
         <link rel="stylesheet" href="">
         <style>
-            
+       .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}     
         </style>
     </head>
     <body onload="scrollSection()" class="text-white ">
@@ -141,13 +147,27 @@
         </div>
 <% if (locals.response){ %> 
             <div id="responseSection" class="my-10 h-screen flex flex-col items-center justify-center">
-                <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2">
-                    <h1 class="text-center mt-[80px]   text-7xl font-bold">Generated Response</h1>
+                <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2 ">
+                    <h1 class="text-center mt-[80px] text-7xl font-bold">Generated Response</h1>
                     <div class="text-lg text-left">
                         <pre class="text-wrap font-sans mt-10"><%= response %></pre>
                     </div>
-                    <a href="<%= mailto %>" type="button" class="text-center w-36 border border-black">Send Mail</a>
-                    <a href="/" class="text-center w-36 border border-black" type="button" >Reset</a>
+                    <div id="buttonGenerate" class="relative inline-flex items-center justify-center gap-4 group">
+                        <div
+                            class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
+                        ></div>
+                        <a
+                            href="<%= mailto %>"
+                            class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-12 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                            >Send Mail
+                        </a>
+                        </div>
+                    <button
+                        class="bg-gray-900 text-white text-center w-48 rounded-2xl h-12 mt-2 relative text-black text-xl font-semibold hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                        type="button"
+                        onclick="location.href='/';"
+                        >Reset</button>
+                </form>
                 </div>
             </div>
 <% } %>
