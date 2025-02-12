@@ -149,24 +149,24 @@
             </div>
         </div>
 <% if (locals.response){ %> 
-            <div id="responseSection" class="my-10 h-screen flex flex-col items-center justify-center">
+            <div id="responseSection" class="my-10 h-fit md:h-screen flex flex-col items-center justify-center">
                 <div class="md:w-[50rem] flex flex-col justify-center items-center gap-2 ">
-                    <h1 class="text-center mt-[80px] text-7xl font-bold">Generated Response</h1>
-                    <div class="text-md md:text-lg text-left">
+                    <h1 class="text-center mt-[80px] text-6xl md:text-7xl font-bold">Generated Response</h1>
+                    <div class="text-sm mx-5 md:text-lg text-left">
                         <pre class="text-wrap font-sans mt-10"><%= response %></pre>
                     </div>
-                    <div id="buttonGenerate" class="relative inline-flex items-center justify-center gap-4 group">
+                    <div id="buttonGenerate" class="mt-10 relative inline-flex items-center justify-center gap-4 group">
                         <div
                             class="absolute inset-0 duration-1000 opacity-60 transitiona-all bg-gradient-to-r from-indigo-500 via-pink-500 to-yellow-400 rounded-xl blur-lg filter group-hover:opacity-100 group-hover:duration-200"
                         ></div>
                         <a
                             href="<%= mailto %>"
-                            class="group relative inline-flex items-center justify-center text-xl rounded-xl bg-gray-900 px-12 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                            class="group relative inline-flex items-center justify-center text-md md:text-xl rounded-xl bg-gray-900 px-12 py-3 font-semibold text-white transition-all duration-200 hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
                             >Send Mail
                         </a>
                         </div>
                     <button
-                        class="bg-gray-900 text-white text-center w-48 rounded-2xl h-12 mt-2 relative text-black text-xl font-semibold hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
+                        class="bg-gray-900 text-white text-center px-16 py-3 rounded-2xl  mt-2 relative text-black text-md md:text-xl font-semibold hover:bg-gray-800 hover:shadow-lg hover:-translate-y-0.5 hover:shadow-gray-600/30"
                         type="button"
                         onclick="location.href='/';"
                         >Reset</button>
