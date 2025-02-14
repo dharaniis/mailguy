@@ -85,13 +85,13 @@
                 <div class=" py-5  flex flex-col items-center justify-center gap-5 ">
                 <h1 class="mt-[80px] md:mt-0 text-6xl md:text-7xl text-center font-bold">Fill the Form</h1>
                 <form id="queryForms" action="/submit" method="POST" class="mt-10 flex flex-col items-center gap-2">
-                    <div class="grid md:grid-flow-col md:grid-rows-[100px_100px_100px_100px] md:grid-cols-[minmax(400px,_1fr)_minmax(400px,_1fr)] gap-6 mb-10 text-center justify-center items-center ">
+                    <div class="grid md:grid-flow-col md:grid-rows-[100px_100px_100px_100px] md:grid-cols-[minmax(400px,_1fr)_minmax(400px,_1fr)] md:gap-6  gap-10 mb-10 text-center justify-center items-center ">
                         <!-- Who's writing ? -->
                          <!-- Parent/Employee/Student -->
                          <div class="order-first flex md:flex-row flex-col items-center justify-center">
                             <label for="user" class="font-bold text-md md:text-lg md:basis-[150px]">Who's writing ?</label>
                             <div class="flex flex-col gap-2 md:basis-[250px]">
-                                <select id="user" class="border rounded-lg py-3 px-3 bg-black border-indigo-600 placeholder-white-500 text-white" name="user" form="queryForms">
+                                <select id="user" class="w-[220px] md:w-auto border rounded-lg p-3 bg-black border-indigo-600 placeholder-white-500 text-white" name="user" form="queryForms">
                                     <option value="student">Student</option>
                                     <option value="parent">Parent</option>
                                     <option value="employee">Employee</option>
@@ -110,10 +110,10 @@
                             <label for="parentname" class="font-bold text-md md:text-lg md:basis-[150px]">Parent Name</label>
                             <input class="border rounded-lg p-1 md:py-3 md:px-3 mt-4 bg-black border-indigo-600 placeholder-white-500 text-white h-min" type="text" id="pname" name="parentname">    
                         </div>
-                        <div class=" flex md:flex-row flex-col items-center justify-center">
+                        <div class="flex md:flex-row flex-col items-center justify-center">
                             <label for="reason" class="font-bold text-md md:text-lg md:basis-[150px]">Reason</label>
                             <div class="flex flex-col gap-2 md:basis-[250px]">
-                                <select id="reason" class="border rounded-lg py-3 px-3 bg-black border-indigo-600 placeholder-white-500 text-white" name="reason" form="queryForms">
+                                <select id="reason" class="w-[220px] md:w-auto border rounded-lg py-3 px-3 bg-black border-indigo-600 placeholder-white-500 text-white" name="reason" form="queryForms">
                                     <option value="" class="">Select a Reason</option>
                                     <option value="medicalleave">Medical Leave</option>
                                     <option value="personalreasons">Personal Reasons</option>
